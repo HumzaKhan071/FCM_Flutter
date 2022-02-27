@@ -43,11 +43,11 @@ class _NotificationAppState extends State<NotificationApp> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    var androidIntialize = new AndroidInitializationSettings("ic_launcher");
+    var androidIntialize = new AndroidInitializationSettings('ic_launcher');
     var intializationSettings =
         new InitializationSettings(android: androidIntialize);
     localNotification = new FlutterLocalNotificationsPlugin();
-    localNotification!.initialize(intializationSettings);
+    localNotification?.initialize(intializationSettings);
   }
 
   Future _ShowNotification() async {
@@ -58,7 +58,7 @@ class _NotificationAppState extends State<NotificationApp> {
     var generalNotificationDetails =
         new NotificationDetails(android: androidDetails);
 
-    await localNotification!.show(0, "Title", "The body of the Notifications",
+    await localNotification?.show(0, "Title", "The body of the Notifications",
         generalNotificationDetails);
   }
 
